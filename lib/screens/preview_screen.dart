@@ -83,10 +83,7 @@ class _PreviewScreenState extends State<PreviewScreen> {
           return;
         }
       }
-      await Gal.putImageBytes(
-        _imageBytes!,
-        name: 'announce_${DateTime.now().millisecondsSinceEpoch}.png',
-      );
+      await Gal.putImageBytes(_imageBytes!);
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Saved to gallery ✓')),
